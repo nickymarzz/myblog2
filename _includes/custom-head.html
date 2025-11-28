@@ -1,0 +1,12 @@
+<!-- Custom head elements -->
+<!-- Add any custom CSS, meta tags, or scripts here -->
+{% if page.custom_css %}
+  {% for css in page.custom_css %}
+    <link rel="stylesheet" href="{{ css | relative_url }}">
+  {% endfor %}
+{% endif %}
+
+{% if site.custom_head %}
+  {{ site.custom_head }}
+{% endif %}
+

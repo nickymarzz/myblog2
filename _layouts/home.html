@@ -1,0 +1,66 @@
+---
+layout: base
+---
+
+<div class="home">
+  {{ content }}
+
+  {% if site.posts.size > 0 %}
+    <h2 class="post-list-heading">Recent Posts</h2>
+    <ul class="post-list">
+      {% for post in site.posts limit:5 %}
+        <li>
+          <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+          <h3>
+            <a class="post-link" href="{{ post.url | relative_url }}">
+              {{ post.title | escape }}
+            </a>
+          </h3>
+          {% if post.excerpt %}
+            <div class="post-excerpt">
+              {{ post.excerpt | strip_html | truncatewords: 30 }}
+            </div>
+          {% endif %}
+          {% if post.categories.size > 0 %}
+            <div class="post-categories">
+              Categories: 
+              {% for category in post.categories %}
+                <a href="{{ '/categories/' | append: category | relative_url }}">{{ category }}</a>{% unless forloop.last %}, {% endunless %}
+              {% endfor %}
+            </div>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+    
+    {% if site.posts.size > 5 %}
+      <p class="rss-subscribe">
+        <a href="{{ '/posts' | relative_url }}">View all posts →</a> | 
+        <a href="{{ '/feed.xml' | relative_url }}">subscribe <img src="{{ '/assets/feed-icon.svg' | relative_url }}" alt="RSS" width="16" height="16"></a>
+      </p>
+    {% endif %}
+  {% endif %}
+
+  {% if site.staff_members.size > 0 %}
+    <h2 class="staff-preview-heading">Our Team</h2>
+    <div class="staff-preview">
+      {% for member in site.staff_members limit:3 %}
+        <div class="staff-preview-item">
+          <h4><a href="{{ member.url | relative_url }}">{{ member.title | escape }}</a></h4>
+          {% if member.role %}
+            <p class="staff-role">{{ member.role }}</p>
+          {% endif %}
+        </div>
+      {% endfor %}
+      <p><a href="{{ '/staff' | relative_url }}">View all staff members →</a></p>
+    </div>
+  {% endif %}
+
+  <p class="featured">Featured posts</p>
+  <h2 class="heading-secondary dark-blue">Latest videos</h2>
+  <div class="includes-grid">
+    {% include youtube.html youtube_id="7W7hEUGtv4U" %}
+    {% include youtube.html youtube_id="E3a88_SjJR0" %}
+  </div>
+</div>
+

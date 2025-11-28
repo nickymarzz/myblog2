@@ -1,0 +1,36 @@
+- name: Ammar
+  role: Senior Cryptographer
+  bio: Expert in classical and modern cryptographic systems with a passion for teaching.
+  email: ammar@cipherschool.com
+  github: ammar-crypto
+  twitter: ammar_crypto
+  expertise:
+    - Cryptography
+    - Security Analysis
+    - Algorithm Design
+  contributions: 15
+
+- name: Nik
+  role: Lead Developer
+  bio: Full-stack developer specializing in secure application development and cryptographic implementations.
+  email: nik@cipherschool.com
+  github: nik-dev
+  twitter: nik_dev
+  expertise:
+    - Web Development
+    - Secure Coding
+    - Cryptographic Libraries
+  contributions: 22
+
+- name: nickymarzz
+  role: Founder & Lead Writer
+  bio: Founder of CipherSchool dedicated to making cryptography and programming accessible to everyone.
+  email: jewimaluwi2019@gmail.com
+  github: nickymarzz
+  twitter: x
+  expertise:
+    - Cryptography Education
+    - Technical Writing
+    - Community Building
+  contributions: 35
+

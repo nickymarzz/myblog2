@@ -1,0 +1,13 @@
+<a class="page-link" href="{{ '/about' | relative_url }}">About</a>
+<a class="page-link" href="{{ '/services' | relative_url }}">Services</a>
+<a class="page-link" href="{{ '/staff' | relative_url }}">Staff</a>
+<a class="page-link" href="{{ '/members' | relative_url }}">Members</a>
+<a class="page-link" href="{{ '/invitees' | relative_url }}">Invitees</a>
+<a class="page-link" href="{{ '/contact-us' | relative_url }}">Contact</a>
+
+{% if site.navigation %}
+  {% for item in site.navigation %}
+    <a class="page-link" href="{{ item.url | relative_url }}">{{ item.title }}</a>
+  {% endfor %}
+{% endif %}
+
